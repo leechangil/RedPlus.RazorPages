@@ -27,15 +27,17 @@ namespace RedPlus
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseStaticFiles(); 
+            //app.UseFileServer(); 
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
-                endpoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsync("Hello World!!!!");
-                });
+                //endpoints.MapGet("/", async context =>
+                //{
+                //    await context.Response.WriteAsync("Hello World!!!!");
+                //});
             });
         }
     }
