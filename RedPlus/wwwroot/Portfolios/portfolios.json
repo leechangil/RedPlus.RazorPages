@@ -3,7 +3,7 @@
     "id": 1,
     "title": ".Net",
     "description": "ASP.NET Core",
-    "img": "/Portfolios/images/Azure.png"
+    "img": "/Portfolios/images/Blazor.jpg"
   },
   {
     "id": 2,
@@ -21,6 +21,6 @@
     "id": 4,
     "title": "Azure DevOps",
     "description": "Azure and Azure DevOps",
-    "img": "/Portfolios/images/Blazor.jpg"
+    "img": "/Portfolios/images/Azure.png"
   }
 ]
