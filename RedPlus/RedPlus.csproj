@@ -4,4 +4,13 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\Portfolios\images\Azure.png" />
+    <None Include="wwwroot\Portfolios\images\Blazor.jpg" />
+    <None Include="wwwroot\Portfolios\images\Python.jpg" />
+    <None Include="wwwroot\Portfolios\images\React.jpg" />
+    <None Include="wwwroot\Portfolios\images\Spring.jpg" />
+    <None Include="wwwroot\Portfolios\images\TypeScript.jpg" />
+  </ItemGroup>
+
 </Project>
