@@ -4,6 +4,7 @@
 @{
   ViewData["Title"] = "Portfolio";
 }
+@using RedPlus.Components
 <!-- Page Content-->
 <section class="py-5">
   <div class="container">
@@ -15,6 +16,7 @@
       <li class="breadcrumb-item"><a asp-page="/Index">Home</a></li>
       <li class="breadcrumb-item active">Portfolio</li>
     </ol>
+    <h2>Razor Page 사용출력</h2>
     <div class="row">
       @foreach (var portfolio in Model.Portfolios)
       {
@@ -32,5 +34,9 @@
         </div>
       }
     </div>
+
+    <hr />
+    <component type="typeof(PortfolioList)" render-mode="ServerPrerendered" />
+    <script src="_framework/blazor.server.js"></script>
   </div>
 </section>
