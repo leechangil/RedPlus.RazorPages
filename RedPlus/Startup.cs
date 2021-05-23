@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using RedPlus.Services;
 
 namespace RedPlus
 {
@@ -17,6 +18,7 @@ namespace RedPlus
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+            services.AddTransient<PortfolioServiceJsonFile>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

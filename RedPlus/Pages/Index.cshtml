@@ -1,6 +1,6 @@
 @page
-@using RedPlus.Models;
-@using RedPlus.Services;
+
+@inject PortfolioServiceJsonFile PortfolioService;
 
 @{
     ViewBag.Title = "Index";
@@ -12,7 +12,8 @@
     //  new Portfolio{ Id = 3, Title = "Javascript", Description = "React"} 
     //};
 
-    var portfolios = (new PortfolioServiceJsonFile()).GetPortfolios();
+    //var portfolios = (new PortfolioServiceJsonFile()).GetPortfolios();
+    var portfolios = PortfolioService.GetPortfolios();
 }
 
 <!-- Page header-->
