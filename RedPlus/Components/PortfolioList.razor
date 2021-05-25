@@ -4,7 +4,7 @@
 @inject PortfolioServiceJsonFile PortfolioService
 
 <h2>Blazor Component 사용출력</h2>
-<div class="row">
+<div class="row portfolio-list">
   @foreach (var portfolio in PortfolioService.GetPortfolios())
   {
     <div class="col-lg-4 col-sm-6 mb-4">
@@ -15,12 +15,83 @@
           <p class="card-text">@portfolio.Description</p>
         </div>
         <div class="card-footer">
-          <button class="btn btn-primary">Read More...</button>
+          <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" @onclick="(() => SelecttPortfolio(portfolio.Id))">Read More...</button>
         </div>
       </div>
     </div>
   }
 </div>
-@code {
 
+@if (selectPortfolio != null)
+{
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">@selectPortfolio.Title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="card h-100">
+            <div class="portfolio-item-image" style="background-image:url('@selectPortfolio.Image');"></div>
+            <div class="card-body">
+              <p class="card-text">@selectPortfolio.Description</p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          @if (voteCount == 0)
+          {
+            <span>투표하세요!</span>
+          }
+          else
+          {
+            <span>@voteCount @voteLabel</span>
+          }
+          @for (int i = 1; i <= 5; i++)
+          {
+            var currentStar = i;
+            if (i <= currentRating)
+            {
+              <span @onclick="() => HandleClick(currentStar)">★</span>
+            }
+            else
+            {
+              <span @onclick="() => HandleClick(currentStar)">☆</span>
+            }
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+}
+@code {
+  Portfolio selectPortfolio = new Portfolio();
+  int currentRating = 0;
+  int voteCount = 0;
+  string voteLabel;
+  void SelecttPortfolio(int portfolioId)
+  {
+    selectPortfolio = PortfolioService.GetPortfolios().First(p => p.Id == portfolioId);
+    if (selectPortfolio.Ratings == null)
+    {
+      currentRating = 0;
+      voteCount = 0;
+    }
+    else
+    {
+      voteCount = selectPortfolio.Ratings.Count();
+      voteLabel = (voteCount > 1) ? "Votes" : "Vote";
+      currentRating = selectPortfolio.Ratings.Sum() / voteCount;
+    }
+  }
+
+  void HandleClick(int rating)
+  {
+    PortfolioService.AddRating(selectPortfolio.Id, rating);
+    SelecttPortfolio(selectPortfolio.Id);
+  }
 }

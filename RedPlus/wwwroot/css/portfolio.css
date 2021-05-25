@@ -5,3 +5,19 @@
     background-size:cover;
     opacity: .8;
 }
+.portfolio-list .card {
+    transition: all 0.2s;
+}
+
+.portfolio-list .card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 20px rgba(37,33,82,.12), 0 4px 8px rgba(37,33,82,.6)
+}
+
+.modal .portfolio-item-image {
+    height: 330px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: .8;
+}

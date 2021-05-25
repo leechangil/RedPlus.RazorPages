@@ -1,19 +1,20 @@
 @page
-
+@using RedPlus.Components;
 @inject PortfolioServiceJsonFile PortfolioService;
 
 @{
-    ViewBag.Title = "Index";
-    //string[] portfolios = { "One", "Two", "Three", "Four", "Five", "Six" };
-    //List<Portfolio> portfolios = new List<Portfolio>()
-    //{
-    //  new Portfolio{ Id = 1, Title = ".Net", Description = "ASP.NET Core"},
-    //  new Portfolio{ Id = 2, Title = "Java", Description = "Spring Boot"},
-    //  new Portfolio{ Id = 3, Title = "Javascript", Description = "React"} 
-    //};
+  Layout = "_LayoutPortfolio";
+  ViewBag.Title = "Index";
+  //string[] portfolios = { "One", "Two", "Three", "Four", "Five", "Six" };
+  //List<Portfolio> portfolios = new List<Portfolio>()
+  //{
+  //  new Portfolio{ Id = 1, Title = ".Net", Description = "ASP.NET Core"},
+  //  new Portfolio{ Id = 2, Title = "Java", Description = "Spring Boot"},
+  //  new Portfolio{ Id = 3, Title = "Javascript", Description = "React"}
+  //};
 
-    //var portfolios = (new PortfolioServiceJsonFile()).GetPortfolios();
-    var portfolios = PortfolioService.GetPortfolios();
+  //var portfolios = (new PortfolioServiceJsonFile()).GetPortfolios();
+  var portfolios = PortfolioService.GetPortfolios();
 }
 
 <!-- Page header-->
@@ -92,6 +93,7 @@
 <section class="py-5 bg-light">
   <div class="container">
     <h2 class="mb-4">Portfolio Heading</h2>
+    <component type="typeof(PortfolioList)" render-mode="ServerPrerendered" />
     <div class="row">
       @foreach (var portfolio in portfolios)
       {

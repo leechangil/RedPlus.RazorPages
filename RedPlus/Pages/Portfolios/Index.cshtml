@@ -2,7 +2,8 @@
 @model RedPlus.Pages.Portfolios.IndexModel
 
 @{
-  ViewData["Title"] = "Portfolio";
+    ViewData["Title"] = "Portfolio";
+    Layout = "_LayoutPortfolio";
 }
 @using RedPlus.Components
 <!-- Page Content-->
@@ -37,6 +38,5 @@
 
     <hr />
     <component type="typeof(PortfolioList)" render-mode="ServerPrerendered" />
-    <script src="_framework/blazor.server.js"></script>
   </div>
 </section>

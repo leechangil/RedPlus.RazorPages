@@ -17,9 +17,11 @@ namespace RedPlus.Models
         public string Description { get; set; }
         [JsonPropertyName("img")]
         public string Image { get; set; }
+        public int[] Ratings { get; set; }
         public override string ToString()
         {
             return JsonSerializer.Serialize<Portfolio>(this);
         }
+
     }
 }
