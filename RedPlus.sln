@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedPlus", "RedPlus\RedPlus.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedPlus.WebApp", "RedPlus.WebApp\RedPlus.WebApp.csproj", "{D4DD498C-6D08-4CBD-9B5B-7BDAF50672A4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zero", "Zero\Zero.csproj", "{1D7460E5-24E6-4ED2-962F-2610270B46DE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D4DD498C-6D08-4CBD-9B5B-7BDAF50672A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4DD498C-6D08-4CBD-9B5B-7BDAF50672A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4DD498C-6D08-4CBD-9B5B-7BDAF50672A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D7460E5-24E6-4ED2-962F-2610270B46DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D7460E5-24E6-4ED2-962F-2610270B46DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D7460E5-24E6-4ED2-962F-2610270B46DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D7460E5-24E6-4ED2-962F-2610270B46DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
